@@ -24,13 +24,13 @@ public class MainManager : MonoBehaviour
         if (DataManager.Instance != null)
         {
             GameObject.Find("ScoreText (1)").GetComponent<Text>().text = DataManager.Instance.highScorePlayer + " has the high score: " + DataManager.Instance.highScore;
-                
         }
         else
         {
             return;
         }
     }
+
 
     // Start is called before the first frame update
     void Start()
@@ -90,5 +90,7 @@ public class MainManager : MonoBehaviour
         }
         m_GameOver = true;
         GameOverText.SetActive(true);
+
+        DataManager.Instance.SaveDetails();
     }
 }
